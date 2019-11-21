@@ -20,24 +20,36 @@ public class UserServiceImpl implements IUserService {
     private IUserDao userDao;
     @Override
     public boolean saveUser(User user) {
+        if (user==null){
+            return false;
+        }
         userDao.addUser(user);
         return true;
     }
 
     @Override
     public boolean deleteUser(User user) {
+        if (user==null||user.getId()<1){
+            return false;
+        }
         userDao.deleteUser(user);
         return true;
     }
 
     @Override
     public boolean updateUser(User user) {
+        if (user==null){
+            return false;
+        }
         userDao.updateUser(user);
         return true;
     }
 
     @Override
     public User queryUserById(Integer id) {
+        if (id<1){
+            return null;
+        }
         return userDao.queryUserById(id);
     }
 
