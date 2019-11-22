@@ -27,6 +27,13 @@ public class User implements Serializable {
         this.type = type;
     }
 
+    public User(String name, String pass, Byte age, Character type) {
+        this.name = name;
+        this.pass = pass;
+        this.age = age;
+        this.type = type;
+    }
+
     public Integer getId() {
         return id;
     }
