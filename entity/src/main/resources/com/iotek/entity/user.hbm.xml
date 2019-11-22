@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+            <!--name指的是实体类模型，table是指对应的数据库表-->
+            <class name="com.iotek.entity.User" table="user">
+                <!--id，name指模型主键，column指数据库主键，generator指主键策略，如果是mysql数据库，native则是自增-->
+                <id name="id" column="id">
+                    <generator class="native"/>
+                </id>
+                <!--每个属性，name指模型属性，column指数据库字段，如果模型与数据库字段一样，则可以省略-->
+                <property name="name"/>
+                <property name="pass"/>
+                <property name="age"/>
+                <property name="type"/>
+            </class>
+</hibernate-mapping>
