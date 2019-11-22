@@ -19,7 +19,9 @@
     <property name="hibernate.hibernate.hbm2ddl.auto">update</property>
     <!--自动提交事物，对insert语句有效-->
     <property name="hibernate.connection.autocommit">true</property>
+    <!--开启与当前线程绑定的session的功能-->
+    <property name="hibernate.current_session_context_class">thread</property>
     <!--需要映射的配置资源-->
-    <mapping resource="com/iotek/entity/user.hbm.xml"/>
+    <!--<mapping resource="com/iotek/entity/user.hbm.xml"/>-->
   </session-factory>
 </hibernate-configuration>
