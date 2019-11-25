@@ -1,6 +1,7 @@
 package com.iotek.util;
 
-import org.hibernate.SessionFactoryObserver;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
@@ -10,8 +11,25 @@ import org.hibernate.cfg.Configuration;
  * @Since: 1.0
  */
 public class HibernateUtil {
+    private static SessionFactory sessionFactory;
     static {
-        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-        SessionFactoryObserver sessionFactoryObserver = cfg.getSessionFactoryObserver();
+        //获取核心 配置对象
+        Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
+        //创建会话工厂
+        sessionFactory = configuration.buildSessionFactory();
+        //设置程序关闭监听
+        Runtime.getRuntime().addShutdownHook(new Thread(){
+            @Override
+            public void run() {
+                sessionFactory.close();
+                System.out.println("程序关闭");
+            }
+        });
+    }
+    public static Session getSession(){
+        return sessionFactory.openSession();
+    }
+    public static Session getCurrentSession(){
+        return sessionFactory.getCurrentSession();
     }
 }

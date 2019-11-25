@@ -10,6 +10,7 @@ import java.util.Objects;
  * @Since: 1.0
  */
 public class User implements Serializable {
+
     private Integer id;
     private String name;
     private String pass;
