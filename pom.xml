@@ -163,6 +163,11 @@
       <artifactId>c3p0</artifactId>
       <version>0.9.5.4</version>
     </dependency>
+    <dependency>
+      <groupId>com.mchange</groupId>
+      <artifactId>mchange-commons-java</artifactId>
+      <version>0.2.3.4</version>
+    </dependency>
     <!--日志log4j依赖-->
     <dependency>
       <groupId>log4j</groupId>
