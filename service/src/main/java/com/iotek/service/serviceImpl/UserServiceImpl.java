@@ -1,4 +1,4 @@
-package com.iotek.serviceImpl;
+package com.iotek.service.serviceImpl;
 
 import com.iotek.dao.IUserDao;
 import com.iotek.entity.User;
