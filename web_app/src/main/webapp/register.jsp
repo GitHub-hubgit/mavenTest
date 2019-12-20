@@ -77,8 +77,6 @@
                 $("a.notImplementLink").click(function(){
                     alert("这个功能没做，蛤蛤~");
                 });
-
-
             });
 
         </script>
@@ -86,22 +84,13 @@
 <body>
 <nav class="top ">
     <div class="top_middle">
-
-        <a href="/tmall">
+        <a href="tianmao">
             <span style="color:#C40000;margin:0px" class=" glyphicon glyphicon-home redColor"></span>
             天猫首页
         </a>
-
         <span>喵，欢迎来天猫</span>
-
-
-
-
         <a href="login.jsp">请登录</a>
         <a href="register.jsp">免费注册</a>
-
-
-
         <span class="pull-right">
 			<a href="forebought">我的订单</a>
 			<a href="forecart">
@@ -110,104 +99,45 @@
 		</span>
     </div>
 </nav>
-
-
-
-
-
-
 <div class="simpleSearchOutDiv">
     <a href="/tmall">
         <img id="simpleLogo" class="simpleLogo" src="img/site/simpleLogo.png">
     </a>
-
     <form action="foresearch" method="post" >
         <div class="simpleSearchDiv pull-right">
             <input type="text" placeholder="平衡车 原汁机"  value="" name="keyword">
             <button class="searchButton" type="submit">搜天猫</button>
             <div class="searchBelow">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 					<span>
 						<a href="forecategory?cid=76">
 							冰箱
 						</a>
-
 							<span>|</span>
-
 					</span>
-
-
-
                 <span>
 						<a href="forecategory?cid=75">
 							空调
 						</a>
-
 							<span>|</span>
-
 					</span>
-
-
-
                 <span>
 						<a href="forecategory?cid=74">
 							女表
 						</a>
-
 							<span>|</span>
-
 					</span>
-
-
-
                 <span>
 						<a href="forecategory?cid=73">
 							男表
 						</a>
-
 					</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
         </div>
     </form>
     <div style="clear:both"></div>
 </div>
-
-
-
 <script>
     $(function(){
-
-
-
         $(".registerForm").submit(function(){
             if(0==$("#name").val().length){
                 $("span.errorMessage").html("请输入用户名");
@@ -229,7 +159,6 @@
                 $("div.registerErrorMessageDiv").css("visibility","visible");
                 return false;
             }
-
             return true;
         });
     })
@@ -269,6 +198,11 @@
             <tr>
                 <td class="registerTableLeftTD">密码确认</td>
                 <td class="registerTableRightTD"><input id="repeatpassword" type="password"   placeholder="请再次输入你的密码" > </td>
+            </tr>
+
+            <tr>
+                <td class="cood"><input placeholder="请输入验证码" > </td>
+                <td class="cood"><img src="/CheckCodeServlet"></td>
             </tr>
 
             <tr>
