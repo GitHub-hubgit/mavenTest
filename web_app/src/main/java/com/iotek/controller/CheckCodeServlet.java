@@ -59,7 +59,7 @@ public class CheckCodeServlet extends HttpServlet {
         }
         //生成图片
         graphics.dispose();
-        request.setAttribute("img",string);
+        request.setAttribute("imgcodvalue",string);
         ImageIO.write(image,"JPEG",response.getOutputStream());//输出图形到页面
     }
     private static Color getColor(){

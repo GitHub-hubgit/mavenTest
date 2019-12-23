@@ -138,6 +138,9 @@
 </div>
 <script>
     $(function(){
+        $("#checkImg").onclick(function () {
+            $("#img").attr("src","/web_app_war_exploded/CheckCodeServlet");
+        });
         $(".registerForm").submit(function(){
             if(0==$("#name").val().length){
                 $("span.errorMessage").html("请输入用户名");
@@ -158,6 +161,13 @@
                 $("span.errorMessage").html("重复密码不一致");
                 $("div.registerErrorMessageDiv").css("visibility","visible");
                 return false;
+            }
+            alert($("#imgCode").val());
+            if($("#checkCode").val()!=$("#imgCode").val()){
+                $("span.errorMessage").html("验证码输入错误");
+                $("div.registerErrorMessageDiv").css("visibility","visible");
+                return false;
+                $("#img").attr("src","/web_app_war_exploded/CheckCodeServlet");
             }
             return true;
         });
@@ -201,8 +211,14 @@
             </tr>
 
             <tr>
-                <td class="cood"><input placeholder="请输入验证码" > </td>
-                <td class="cood"><img src="/CheckCodeServlet"></td>
+                <td class="registerTableLeftTD">
+                    <img src="/web_app_war_exploded/CheckCodeServlet" id="img">
+                </td>
+                <td class="registerTableRightTD">
+                    <input id="checkCode" placeholder="请输入验证码" ><br>
+                    <input type="hidden" value="${imgcodvalue}" id="imgCode">
+                    看不清？<a id="checkImg">换一张</a>
+                </td>
             </tr>
 
             <tr>
