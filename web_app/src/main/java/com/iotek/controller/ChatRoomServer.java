@@ -1,4 +1,4 @@
-package com.zhangjinbang.chat;
+package com.iotek.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -19,7 +19,6 @@ public class ChatRoomServer {
     // 记录此次聊天室有多少客户端连接
     // key 代表此次客户端的session，value代表此次连接对象
     private static final HashMap<String, Object> connectMap = new HashMap<String, Object>();
-
     // 用户列表（实际环境中用redis比较好）
     // key 是 session的Id,value是用户名
     private static final HashMap<String, String> userMap = new HashMap<String, String>();
@@ -90,5 +89,4 @@ public class ChatRoomServer {
             }
         }
     }
-
 }

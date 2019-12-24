@@ -363,10 +363,17 @@
       <artifactId>standard</artifactId>
       <version>1.1.2</version>
     </dependency>
+    <!--websocket-->
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-api</artifactId>
       <version>8.0.1</version>
+    </dependency>
+    <!--redis数据库驱动-->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>3.2.0</version>
     </dependency>
   </dependencies>
 
