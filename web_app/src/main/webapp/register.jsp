@@ -216,8 +216,7 @@
                 </td>
                 <td class="registerTableRightTD">
                     <input id="checkCode" placeholder="请输入验证码" ><br>
-                    <input type="hidden" value="${imgcodvalue}" id="imgCode">
-                    看不清？<a id="checkImg">换一张</a>
+                    看不清？<span id="checkImg">换一张</span>
                 </td>
             </tr>
 

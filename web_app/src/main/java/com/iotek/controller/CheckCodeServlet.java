@@ -14,11 +14,12 @@ import java.util.Random;
 /**
  * @Author: 邪灵
  * @Date: 2019/12/20 21:31
- * @Description: ${description}
+ * @Description: 生成随机验证码图片
  * @Since: 1.0
  */
 @WebServlet("/CheckCodeServlet")
 public class CheckCodeServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //设置页面不缓存
         response.setHeader("Pragma","No-cache");
@@ -37,7 +38,7 @@ public class CheckCodeServlet extends HttpServlet {
         graphics.setColor(getColor());
         graphics.drawRect(0,0,width-1,height-1);
         //设置文字，颜色，画文字
-        String string = null;
+        String string = "";
         Random random = new Random();
         for (int i = 1; i <= 4; i++) {
             //生成随机字符
@@ -59,7 +60,8 @@ public class CheckCodeServlet extends HttpServlet {
         }
         //生成图片
         graphics.dispose();
-        request.setAttribute("imgcodvalue",string);
+        System.out.println(string+"验证码");
+        request.getSession().setAttribute("imgcodvalue",string);
         ImageIO.write(image,"JPEG",response.getOutputStream());//输出图形到页面
     }
     private static Color getColor(){
@@ -67,6 +69,7 @@ public class CheckCodeServlet extends HttpServlet {
         return new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255));
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }
