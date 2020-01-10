@@ -1,6 +1,8 @@
 package com.iotek.entity;
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * @Author: 邪灵
@@ -9,6 +11,9 @@ import lombok.Data;
  * @Since: 1.0
  */
 @Data
+@AllArgsConstructor
+@EqualsAndHashCode
+@NoArgsConstructor
 public class Teacher {
     private Integer id;
     private String name;
